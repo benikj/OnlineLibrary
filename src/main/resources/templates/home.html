@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/main.css">
+
+
+</head>
+
+<style>
+    #myCarousel > div > div:nth-child(1) > img{
+        margin-top: 0px;
+        height: 500px;
+        margin-left: 0px;
+    }
+    #myCarousel > div > div:nth-child(2) > img{
+        height: 500px;
+        margin-left: 0px;
+    }
+    #myCarousel > div > div:nth-child(3) > img{
+        height: 500px;
+        margin-left: 0px;
+    }
+    body > div.header > nav{
+        margin-bottom: 0px;
+
+    }
+
+    body > footer > div > div{
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+    }
+    body > footer{
+        /*background-color:   #5b0e2d;*/
+        /*background-color: #514644;*/
+        /*background-color: #4d3227;*/
+        /*background-color: #3d4c41;*/
+        background-color: #3c1414;
+        color: #e6e6e6;
+        margin: 20px 20px;
+        padding-right: 30px;
+    }
+    body > footer > div > div{
+        padding: 10px 10px;
+    }
+
+    body > footer > div{
+        margin: 20px 20px;
+    }
+
+    #myCarousel > div{
+        margin-left: 0;
+    }
+
+    .carousel-caption {
+        bottom: 3rem;
+        z-index: 10;
+    }
+
+    #myCarousel > div > div:nth-child(1) > div > div{
+        text-align: left;
+    }
+    #myCarousel > div > div:nth-child(3) > div > div{
+        text-align: right;
+    }
+
+    .my-nav{
+    /*    z-index:999*/
+        position: absolute;
+        width: 100%;
+        z-index: 999;
+        background: none;
+        border: 0;
+        border-radius: 0;
+
+    }
+
+    #myCarousel{
+        margin-bottom: 0;
+        position: relative;
+        top: 0;
+        width: 100%;
+
+    }
+
+
+
+    .marketing .col-lg-4 {
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    .marketing h2 {
+        font-weight: 400;
+    }
+    /* rtl:begin:ignore */
+    .marketing .col-lg-4 p {
+        margin-right: .75rem;
+        margin-left: .75rem;
+    }
+    body > div.container.marketing{
+        margin-top: 5%;
+    }
+
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+
+    .featurette-divider {
+        margin: 5rem 0;
+    }
+
+    hr{
+       margin-left: 10px;
+        margin-right: 10px;
+        border: 1px solid whitesmoke;
+    }
+
+    .navbar-left{
+        margin-left: 70%;
+
+    }
+
+
+    /*body > div:nth-child(4) > div:nth-child(4) > div.col-md-7.order-md-2{*/
+    /*    position: absolute;*/
+    /*    left: 48%;*/
+    /*}*/
+
+    /*body > div:nth-child(4) > div:nth-child(4) > div.col-md-5.order-md-1{*/
+    /*    position: absolute ;*/
+    /*}*/
+
+    @media (min-width: 768px) {
+        .navbar-form {
+            width: auto;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-left: 400px;
+            border: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+    }
+
+    @media (min-width: 40em) {
+        /* Bump up size of carousel content */
+
+
+        .featurette-heading {
+            font-size: 50px;
+        }
+    }
+
+    @media (min-width: 62em) {
+        .featurette-heading {
+            margin-top: 7rem;
+        }
+
+        #myCarousel{
+            margin-bottom: 0;
+            position: relative;
+            top: 0;
+            width: 100%;
+
+        }
+    }
+</style>
+<body>
+<div class="header">
+<nav class="my-nav navbar navbar-inverse "> <!--navbar-expand-md navbar-dark bg-dark -->
+    <div class="container">
+        <div class="navbar-header">
+            <a  style="color: white" class="navbar-brand" href="/home">Digital library</a>
+        </div>
+
+        <ul class="my-link nav navbar-nav ">
+            <li class="nav-item m-auto">
+                <a style="color: white" class="nav-link active" href="/home">Home</a>
+            </li>
+            <li class="nav-item m-auto">
+                <a  style="color: white" class="nav-link" href="/topics">Topics</a>
+            </li>
+            <li class="nav-item m-auto">
+                <a  style="color: white" class="nav-link" href="/books">E-books</a>
+            </li>
+            <li class="nav-item m-auto">
+                <a style="color: white"  class="nav-link " href="/users" sec:authorize="hasRole('ROLE_ADMIN')">Users</a>
+            </li>
+        </ul>
+
+
+        <form class=" navbar-form navbar-left"><!-- form-inline my-2 my-lg-0-->
+
+            <a class="btn btn-success btn-sm ml-3" sec:authorize="!isAuthenticated()" href="/register">
+                Register
+            </a>
+            <a class="btn btn-primary btn-sm ml-3" sec:authorize="!isAuthenticated()" href="/login">
+                Login
+            </a>
+            <a style="color: white;text-decoration: none;margin-right: 5px" sec:authorize="isAuthenticated()" sec:authentication="name">
+            </a>
+            <a class="btn btn-primary btn-sm ml-3" sec:authorize="isAuthenticated()" href="/logout" >
+                Logout
+            </a>
+
+        </form>
+
+    </div>
+</nav>
+</div>
+    <div  id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img th:src="@{/assets/img/b1.jpg}" src="../static/assets/img/b1.jpg" alt="Library" style="width:100%;">
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                        <h1>Connect with our members</h1>
+                        <p>Join over 10000 people who download the best books</p>
+                        <p><a class="btn btn-lg btn-primary" href="/register">Sign up today</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img th:src="@{/assets/img/b13.jpg}" src="../static/assets/img/b13.jpg" alt="Library1" style="width:100%;">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Amazing books and genres</h1>
+                        <p>You can now find all of your books and genres on our website.</p>
+                        <p><a class="btn btn-lg btn-primary" href="/topics">Learn more</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img th:src="@{/assets/img/b9.jpg}" src="../static/assets/img/b9.jpg" alt="Library2" style="width:100%;">
+                <div class="container">
+                    <div class="carousel-caption text-end">
+                        <h1>Get to know us</h1>
+                        <p>Digital library is more then just regular books.</p>
+                        <p><a class="btn btn-lg btn-primary" href="/books">Browse gallery</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+<div  class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+        <div class="col-lg-4">
+            <img class="rounded-circle" th:src="@{/assets/img/b20.jpg}" src="../static/assets/img/b20.jpg" width="140" height="140" alt="">
+            <h2>Book genres</h2>
+            <p>Find out the different genres of books and pick any book of your interest.</p>
+            <p><a class="btn btn-primary"  href="/topics">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+
+            <img class="bd-placeholder-img rounded-circle" th:src="@{/assets/img/b19.jpg}" src="../static/assets/img/b19.jpg" width="140" height="140" alt="">
+            <h2>Our library</h2>
+            <p>Be part of our library and learn different things. Grow new perspective and be more confident after the knowledge of books </p>
+            <p><a class="btn btn-primary" href="/books">View details &raquo;</a></p>
+
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="bd-placeholder-img rounded-circle" th:src="@{/assets/img/b18.jpeg}" src="../static/assets/img/b18.jpeg" width="140" height="140" alt="">
+
+            <h2>Latest books</h2>
+            <p>Find out our latest books and improve your knowledge in different areas of interest.</p>
+            <p><a class="btn btn-primary"  href="/books">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+</div>
+
+
+<div class="container">
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading"> What do we think about books?<span class="text-muted"> Is there any power in the written word?</span></h2>
+            <p class="lead"> Books are referred to as a man’s best friend.They are very beneficial for mankind and have helped it evolve. Books offer us so many things without asking for anything in return. Books leave a deep impact on us and are responsible for uplifting our mood.</p>
+        </div>
+        <div class="col-md-5">
+            <img class="bd-placeholder-img rounded-circle" th:src="@{/assets/img/b4.jpg}" src="../static/assets/img/b4.jpg" width="500" height="500" alt="">
+
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-6 order-md-1">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" th:src="@{/assets/img/b16.jpg}" src="../static/assets/img/b16.jpg" width="500" height="500" alt="">
+
+        </div>
+        <div  class="col-md-6 order-md-2">
+            <h2 class="featurette-heading">Be part of our members <span class="text-muted">See for yourself</span></h2>
+            <p class="lead" >Let your imagination run wild and get your new perspective. Get yourself a deeper understanding of things
+             and get inspired to do well in life.
+
+            </p>
+        </div>
+
+    </div>
+    <hr class="featurette-divider">
+    <br>
+
+</div>
+<footer class="container-fluid text-white-50">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-3 col-lg-4 col-xl-3">
+                <h5><strong>STAY CONNECTED</strong></h5>
+
+                <p class="mb-0">
+                    Join over 10000 people who download the best books
+                </p>
+                <a href="/register" sec:authorize="!isAuthenticated()" class="btn btn-success">Sign up</a>
+            </div>
+
+            <div class="col-md-6 col-lg-5 col-xl-5 mx-auto">
+                <h5><strong>About us</strong></h5>
+
+                <p class="mb-1" >
+                    Something about usWill not secure any request
+                    2022-04-19 23:22:29.907  INFO 5236 ds (JVM running for 3.777)
+
+                </p>
+            </div>
+
+
+
+            <div class="col-md-2 col-lg-2 col-xl-4">
+                <h5><strong>Contact</strong></h5>
+
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-home mr-2"></i> My company</li>
+                    <li> email@example.com</li>
+                    <li><i class="fa fa-phone mr-2"></i> + 33 12 14 15 16</li>
+                    <li><i class="fa fa-print mr-2"></i> + 33 12 14 15 16</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
